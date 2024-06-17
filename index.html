@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <title>FFInformation</title>
+
+
+
+</head>
+
+<body class="bg-slate-900 mx-5 my-5">
+  <div class="text-center">
+    <input id="playerUIDInput" class="rounded-lg hover:bg-slate-700 bg-slate-800 border border-[#253146] border-double w-full text-white px-5 py-2 focus:outline-none font-mono transition-colors duration-250 ease-[cubic-bezier(0.23, 1, 0.32, 1)]" type="number" placeholder="Enter uid here">
+    <div class="mt-3 relative w-full custom-dropdown" id="regionDropdown">
+      <div id="dropdown-button" class="transition-all duration-300 ease-out rounded-lg block w-full p-2.5 bg-slate-800 text-white font-mono border border-[#253146] border-double" onclick="toggleDropdown()">Select region</div>
+      <div class="dropdown-menu transition-all duration-300 ease-out shadow-lg max-h-0 overflow-hidden absolute w-full bg-slate-800 text-white font-mono rounded-b-lg" id="dropdownMenu"></div>
+    </div>
+    <button class="rounded-lg px-5 border border-[#253146] border-double font-mono text-center mt-3 mb-3 transition-all duration-250 ease-[cubic-bezier(0.23, 1, 0.32, 1)] py-2 hover:bg-slate-950 bg-slate-800 text-white" id="submitButton">Submit</button>
+  </div>
+  <p class="text-white font-mono" id="log"></p>
+  <style>
+    .loader {
+      border-top-color: #3498db;
+      border-left-color: #3498db;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .custom-dropdown.open .dropdown-menu {
+      max-height: 600px;
+    }
+  </style>
+  <script src="main.js"></script>
+</body>
+
+</html>
